@@ -1,5 +1,7 @@
 body {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(40, 20, 100, 1);
+  color: white;
+  text-shadow: 2px 2px 2px black;
   padding: 25px;
 }
 .resultsBox{
