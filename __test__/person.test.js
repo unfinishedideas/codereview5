@@ -18,5 +18,9 @@ describe('Person', () => {
     expect(newPerson.mercuryAge).toEqual(4.8);
   });
 
-
+  test('should take a person objects age and return Venus years', () => {
+    let newPerson = new Person(20);
+    newPerson.calcAge();
+    expect(newPerson.venusAge).toEqual(12.4);
+  });
 });
