@@ -25,6 +25,9 @@ export class Person {
       if (Number.isNaN(this.healthInput[i])){
         return "Err: NaN";
       }
+      else if (this.healthInput[i] === ""){
+        return "Err: NaN";
+      }
       else {
         this.expectedAge += this.healthInput[i];
       }
