@@ -29,10 +29,10 @@ $(document).ready(function(){
 
     // Checks to see if the input was valid
     if (newPerson.calcAge() === "Err: NaN"){
-      $("#warnAgeText").text("No Strings! Please Enter a Valid Age: ").show();
+      $("#warnAgeText").text("No Strings! Please Enter a Valid Age").show();
     }
     else if (newPerson.calcAge() === "Err: Negative Number"){
-      $("#warnAgeText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number: ").show();
+      $("#warnAgeText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number").show();
     }
     else if (newPerson.calcAge() === "good"){
       $("#warnAgeText").hide();
