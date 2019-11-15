@@ -33,12 +33,17 @@ describe('Person', () => {
   });
 
   // Testing Health Calc ------------------------------------------------------
-  test('should take a person objects health and catch NaN', () => {
+  test('should take a person objects healthInput and catch NaN', () => {
     let newPerson = new Person(20, [NaN]);
     expect(newPerson.calcHealth()).toEqual("Err: NaN");
   });
-  test('should take a person objects health and catch 0 or negative numbers', () => {
+  test('should take a person objects healthInput and catch 0 or negative numbers', () => {
     let newPerson = new Person(20, [-5]);
     expect(newPerson.calcHealth()).toEqual("Err: Negative Number");
+  });
+  test('should take a person objects healthInput and add it to the totalHealth property', () => {
+    let newPerson = new Person(20, [5, 5, 5]);
+    newPerson.calcHealth();
+    expect(newPerson.totalHealth).toEqual(15);
   });
 });
