@@ -31,16 +31,14 @@ $(document).ready(function(){
       $("#warnAgeText").hide();
       newPerson.calcAge();
     }
+
     if (newPerson.calcHealth() === "Err: NaN"){
       $("#warnHealthText").text("You've entered invalid information in your Health Stats");
     }
     else {
       $("#warnHealthText").hide();
+      newPerson.calcHealth();
     }
-
-    // Run the calculations
-    newPerson.calcAge();
-    newPerson.calcHealth();
 
     // Display Results
     $("#ageDump").text(newPerson.age);
@@ -48,7 +46,7 @@ $(document).ready(function(){
     $("#venusAgeDump").text(newPerson.venusAge);
     $("#marsAgeDump").text(newPerson.marsAge);
     $("#jupiterAgeDump").text(newPerson.jupiterAge);
-    $("#lifeExpectDump").text(newPerson.totalHealth);
+    $("#lifeExpectDump").text(newPerson.expectedAge);
 
     $(".userInputForm").hide();
     $(".resultsBox").show();

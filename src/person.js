@@ -20,6 +20,7 @@ export class Person {
     }
   }
   calcHealth(){
+    this.expectedAge = 80;
     for (let i = 0; i < this.healthInput.length; i++){
       if (Number.isNaN(this.healthInput[i])){
         return "Err: NaN";
