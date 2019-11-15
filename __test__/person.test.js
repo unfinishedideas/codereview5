@@ -23,4 +23,10 @@ describe('Person', () => {
     newPerson.calcAge();
     expect(newPerson.venusAge).toEqual(12.4);
   });
+
+  test('should take a person objects age and return Mars years', () => {
+    let newPerson = new Person(20);
+    newPerson.calcAge();
+    expect(newPerson.marsAge).toEqual(37.6);
+  });
 });
