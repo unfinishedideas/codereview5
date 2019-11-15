@@ -10,7 +10,7 @@ export class Person {
       return "Err: Negative Number";
     }
     else {
-      
+      this.mercuryAge = (this.age * .24);
     }
   }
 }
