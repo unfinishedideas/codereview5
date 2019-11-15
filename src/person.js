@@ -17,4 +17,11 @@ export class Person {
       this.jupiterAge = Math.floor(this.age * 11.86);
     }
   }
+  calcHealth(){
+    for (let i = 0; i < this.health.length; i++){
+      if (Number.isNaN(this.health[i])){
+        return "Err: NaN";
+      }
+    }
+  }
 }
