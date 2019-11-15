@@ -1,10 +1,23 @@
 body {
-  background-color: rgba(40, 20, 100, 1);
+  background-color: black;
   color: white;
-  /* text-shadow: 2px 2px 2px black; */
+  text-shadow: 2px 2px 2px black;
   padding: 25px;
 }
-
+.blueBox {
+  background-color: rgba(50, 30, 110, 1);
+  border: 3px rgba(100, 0, 255, 1) solid;
+  border-radius: 20px;
+}
+.jumbotron {
+  margin-bottom: 20px;
+  text-align: center;
+  font-variant: small-caps;
+}
+.questionBox {
+  padding: 20px;
+  margin-bottom: 20px;
+}
 .resultsBox{
   display: none;
   padding: 25px;
@@ -12,13 +25,7 @@ body {
 .dynamicAge {
   color: rgba(0, 255, 0, 1);
 }
-.userInputForm {
-  padding: 20px;
-}
-.questionBox {
-  /* float: left; */
-  margin: 10px;
-}
+
 #beyondTag {
   display: none;
 }
@@ -29,3 +36,6 @@ body {
 #warnHealthText {
   display: none;
 }
+/* .userInputForm {
+padding: 20px;
+} */
