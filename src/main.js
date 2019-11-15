@@ -7,30 +7,51 @@ import { Person } from './person.js';
 $(document).ready(function(){
   $(".userInputForm").submit(function(event){
     event.preventDefault();
-    // Collects User Input and makes Object
-    let ageInput = parseInt($("#userAge").val());
-    let newPerson = new Person(ageInput);
+    // Collects User's Age Input, initialize HealthInput array
+    const ageInput = parseInt($("#userAge").val());
+    const healthInput = [];
 
-    // Checks to see if the user input was valid
+    // Collects User's Habits and stores them in the healthInput array
+    $("input:checkbox[name=habits]:checked").each(function(){
+        let habitPoint = $(this).val();
+        healthInput.push(habitPoint);
+    });
+
+    // Checks to see if the input was valid
     if (newPerson.calcAge() === "Err: NaN"){
-      $("#warnText").text("No Strings! Please Enter a Valid Number: ").show();
+      $("#warnAgeText").text("No Strings! Please Enter a Valid Age: ").show();
     }
     else if (newPerson.calcAge() === "Err: Negative Number"){
-      $("#warnText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number: ").show();
+      $("#warnAgeText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number: ").show();
+    }
+    else if (newPerson.calcAge() === "good"){
+      $("#warnAgeText").hide();
+      newPerson.calcAge();
+    }
+    if (newPerson.calcHealth() === "Err: NaN"){
+      $("#warnHealthText").text("You've entered invalid information in your Health Stats");
     }
     else {
-      newPerson.calcAge();
-      // Display Results
-      $("#ageDump").text(newPerson.age);
-      $("#mercuryAgeDump").text(newPerson.mercuryAge);
-      $("#venusAgeDump").text(newPerson.venusAge);
-      $("#marsAgeDump").text(newPerson.marsAge);
-      $("#jupiterAgeDump").text(newPerson.jupiterAge);
-
-      $("#warnText").hide();
-      $(".userInputForm").hide();
-      $(".resultsBox").show();
+      newPerson.calcHealth();
+      $("#warnHealthText").hide();
     }
+
+
+
+
+    const newPerson = new Person(ageInput, healthInput);
+
+
+
+    // Display Results
+    $("#ageDump").text(newPerson.age);
+    $("#mercuryAgeDump").text(newPerson.mercuryAge);
+    $("#venusAgeDump").text(newPerson.venusAge);
+    $("#marsAgeDump").text(newPerson.marsAge);
+    $("#jupiterAgeDump").text(newPerson.jupiterAge);
+
+    $(".userInputForm").hide();
+    $(".resultsBox").show();
   });
 
   // Reset the Page

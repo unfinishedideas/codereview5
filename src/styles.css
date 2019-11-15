@@ -8,6 +8,9 @@ body {
   display: none;
 }
 
-#warnText {
+#warnAgeText {
+  display: none;
+}
+#warnHealthText {
   display: none;
 }
