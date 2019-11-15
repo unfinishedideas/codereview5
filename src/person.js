@@ -2,7 +2,7 @@ export class Person {
   constructor (age, health){
     this.age = age;
     this.healthInput = health;
-    this.totalHealth = 80;
+    this.expectedAge = 80;
   }
   calcAge(){
     if (Number.isNaN(this.age)){
@@ -24,11 +24,8 @@ export class Person {
       if (Number.isNaN(this.healthInput[i])){
         return "Err: NaN";
       }
-      // else if (this.healthInput[i] <= 0){
-      //   return "Err: Negative Number";
-      // }
       else {
-        this.totalHealth += this.healthInput[i];
+        this.expectedAge += this.healthInput[i];
       }
     }
   }

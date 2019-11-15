@@ -13,9 +13,12 @@ $(document).ready(function(){
 
     // Collects User's Habits and stores them in the healthInput array
     $("input:checkbox[name=habits]:checked").each(function(){
-        let habitPoint = $(this).val();
+        let habitPoint = parseInt($(this).val());
         healthInput.push(habitPoint);
     });
+
+    // Create Person Object
+    const newPerson = new Person(ageInput, healthInput);
 
     // Checks to see if the input was valid
     if (newPerson.calcAge() === "Err: NaN"){
@@ -32,16 +35,12 @@ $(document).ready(function(){
       $("#warnHealthText").text("You've entered invalid information in your Health Stats");
     }
     else {
-      newPerson.calcHealth();
       $("#warnHealthText").hide();
     }
 
-
-
-
-    const newPerson = new Person(ageInput, healthInput);
-
-
+    // Run the calculations
+    newPerson.calcAge();
+    newPerson.calcHealth();
 
     // Display Results
     $("#ageDump").text(newPerson.age);
@@ -49,6 +48,7 @@ $(document).ready(function(){
     $("#venusAgeDump").text(newPerson.venusAge);
     $("#marsAgeDump").text(newPerson.marsAge);
     $("#jupiterAgeDump").text(newPerson.jupiterAge);
+    $("#lifeExpectDump").text(newPerson.totalHealth);
 
     $(".userInputForm").hide();
     $(".resultsBox").show();
