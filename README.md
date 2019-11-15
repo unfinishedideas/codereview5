@@ -36,7 +36,10 @@ App will take in a person's lifestyle choices and determine A: a health value fr
 
 | Behavior      | Input        | Output  |
 | ------------- |:-------------| :-----  |
-| App will not accept NaN for health value  | "I'm so healthy, bro"  | Err: Health can't be NaN |
+| App will not accept NaN for health value  | healthInput = ["I'm so healthy, bro"]  | Err: Health can't be NaN |
+| App will loop through the healthInput array and add the values to the person's expectedAge property (which starts at 80) | healthInput = [5, 5, 5]  | expectedAge = 95 |
+
+<!-- ### expectCalc -->
 <!-- | If a person has lived past their expectancy; determine how many years past that they have lived | 20 Years Old  /  | 237.2 Jupiter Years | -->
 
 
