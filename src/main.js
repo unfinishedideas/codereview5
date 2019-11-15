@@ -41,7 +41,7 @@ $(document).ready(function(){
       else if (newPerson.calcHealth() === ""){
         $("#warnHealthText").text("You forgot a checkbox");
       }
-        else {
+      else {
         $("#warnHealthText").hide();
         newPerson.calcHealth();
 

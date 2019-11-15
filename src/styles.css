@@ -1,12 +1,23 @@
 body {
   background-color: rgba(40, 20, 100, 1);
   color: white;
-  text-shadow: 2px 2px 2px black;
+  /* text-shadow: 2px 2px 2px black; */
   padding: 25px;
 }
 
 .resultsBox{
   display: none;
+  padding: 25px;
+}
+.dynamicAge {
+  color: rgba(0, 255, 0, 1);
+}
+.userInputForm {
+  padding: 20px;
+}
+.questionBox {
+  /* float: left; */
+  margin: 10px;
 }
 #beyondTag {
   display: none;

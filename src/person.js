@@ -2,7 +2,6 @@ export class Person {
   constructor (age, health){
     this.age = age;
     this.healthInput = health;
-    this.expectedAge = 80;
   }
   calcAge(){
     if (Number.isNaN(this.age)){
@@ -12,10 +11,10 @@ export class Person {
       return "Err: Negative Number";
     }
     else {
-      this.mercuryAge = Math.floor(this.age * .24);
-      this.venusAge = Math.floor(this.age * .62);
-      this.marsAge = Math.floor(this.age * 1.88);
-      this.jupiterAge = Math.floor(this.age * 11.86);
+      this.mercuryAge = Math.floor(this.age / .24);
+      this.venusAge = Math.floor(this.age / .62);
+      this.marsAge = Math.floor(this.age / 1.88);
+      this.jupiterAge = Math.floor(this.age / 11.86);
       return "good";
     }
   }

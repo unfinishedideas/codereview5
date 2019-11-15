@@ -18,22 +18,22 @@ describe('Person', () => {
   test('should take a person objects age and return mercury years', () => {
     const newPerson = new Person(20, [5, 5, 5]);
     newPerson.calcAge();
-    expect(newPerson.mercuryAge).toEqual(4);
+    expect(newPerson.mercuryAge).toEqual(83);
   });
   test('should take a person objects age and return Venus years', () => {
     const newPerson = new Person(20, [5, 5, 5]);
     newPerson.calcAge();
-    expect(newPerson.venusAge).toEqual(12);
+    expect(newPerson.venusAge).toEqual(32);
   });
   test('should take a person objects age and return Mars years', () => {
     const newPerson = new Person(20, [5, 5, 5]);
     newPerson.calcAge();
-    expect(newPerson.marsAge).toEqual(37);
+    expect(newPerson.marsAge).toEqual(10);
   });
   test('should take a person objects age and return Jupiter years', () => {
     const newPerson = new Person(20, [5, 5, 5]);
     newPerson.calcAge();
-    expect(newPerson.jupiterAge).toEqual(237);
+    expect(newPerson.jupiterAge).toEqual(1);
   });
 
   // Testing Health Calc ------------------------------------------------------
