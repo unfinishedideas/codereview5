@@ -10,7 +10,6 @@ $(document).ready(function(){
     // Collects User Input and makes Object
     let ageInput = parseInt($("#userAge").val());
     let newPerson = new Person(ageInput);
-    newPerson.calcAge();
 
     // Checks to see if the user input was valid
     if (newPerson.calcAge() === "Err: NaN"){
@@ -20,6 +19,7 @@ $(document).ready(function(){
       $("#warnText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number: ").show();
     }
     else {
+      newPerson.calcAge();
       // Display Results
       $("#ageDump").text(newPerson.age);
       $("#mercuryAgeDump").text(newPerson.mercuryAge);
@@ -27,6 +27,7 @@ $(document).ready(function(){
       $("#marsAgeDump").text(newPerson.marsAge);
       $("#jupiterAgeDump").text(newPerson.jupiterAge);
 
+      $("#warnText").hide();
       $(".userInputForm").hide();
       $(".resultsBox").show();
     }
@@ -35,8 +36,6 @@ $(document).ready(function(){
   // Reset the Page
   $("#resetBtn").click(function(){
     window.location.reload();
-    // $(".userInputForm").show();
-    // $(".resultsBox").hide();
   });
 
 });

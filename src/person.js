@@ -1,6 +1,7 @@
 export class Person {
-  constructor (age){
+  constructor (age, health){
     this.age = age;
+    this.health = health;
   }
   calcAge(){
     if (Number.isNaN(this.age)){
