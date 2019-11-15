@@ -1,20 +1,23 @@
-# Pizza Time Pizzeria (Code Review 4)
-#### This was made as an exercise using objects for Epicodus
+# The Super Galactic Age Calculator (CodeReview5)
+#### This was made as an exercise in setting up and working in a modern developer environment for Epicodus
 #### Created by Peter Wells
- _Updated: 11/9/19_
+ _Updated: 11/15/19_
 
 ## Description
 
->The purpose of this site is to allow the user to order multiple pizzas with many toppings and calculate their price and display it to the user. It uses objects and object methods to accomplish this.
+>The purpose of this site is to take a users age and habits and use this information to calculate both their age on other planets based on their yearly cycle and calculate a life expectancy for them.
 
 ## Installation
 
-1. Clone/Download the Git Repository at: https://github.com/unfinishedideas/codereview4.git
-2. Open index.html in your favorite browser
+1. Clone/Download the Git Repository at: https://github.com/unfinishedideas/codereview5.git
+2. Navigate to the directory with terminal (or your preferred console)
+3. type 'npm install' to get the appropriate nodeModules
+4. type 'npm run build' to build a distribution
+5. open ./dist/index.html in your favorite browser
 
 ## Known Bugs
 
-* ~~Bug found where if the user deletes a pizza and returns to the order screen they will be unable to pull the correct pizza on the current display. Cause has to do with the way updateSelectedPizza() works.~~ fixed 11/9/19
+None at present
 
 ## Behavior Tree
 ### AgeCalc
