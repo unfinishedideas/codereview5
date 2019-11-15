@@ -15,18 +15,18 @@ describe('Person', () => {
   test('should take a person objects age and return mercury years', () => {
     let newPerson = new Person(20);
     newPerson.calcAge();
-    expect(newPerson.mercuryAge).toEqual(4.8);
+    expect(newPerson.mercuryAge).toEqual(4);
   });
 
   test('should take a person objects age and return Venus years', () => {
     let newPerson = new Person(20);
     newPerson.calcAge();
-    expect(newPerson.venusAge).toEqual(12.4);
+    expect(newPerson.venusAge).toEqual(12);
   });
 
   test('should take a person objects age and return Mars years', () => {
     let newPerson = new Person(20);
     newPerson.calcAge();
-    expect(newPerson.marsAge).toEqual(37.6);
+    expect(newPerson.marsAge).toEqual(37);
   });
 });
