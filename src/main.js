@@ -55,6 +55,12 @@ $(document).ready(function(){
 
         $(".userInputForm").hide();
         $(".resultsBox").show();
+
+        if (newPerson.expectedAge < newPerson.age) {
+          let difference = newPerson.age - newPerson.expectedAge;
+          $("#beyondLifeExpectDump").text(difference);
+          $("#beyondTag").show();
+        }
       }
     }
   });

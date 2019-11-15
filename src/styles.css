@@ -4,10 +4,11 @@ body {
   text-shadow: 2px 2px 2px black;
   padding: 25px;
 }
+
 .resultsBox{
   display: none;
 }
-#beyondLifeExpectDump {
+#beyondTag {
   display: none;
 }
 
