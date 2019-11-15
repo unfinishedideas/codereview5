@@ -6,8 +6,11 @@ export class Person {
     if (Number.isNaN(this.age)){
       return "Err: NaN";
     }
-    if (this.age < 0){
+    else if (this.age <= 0){
       return "Err: Negative Number";
+    }
+    else {
+      
     }
   }
 }

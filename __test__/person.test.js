@@ -12,4 +12,11 @@ describe('Person', () => {
     expect(newPerson.calcAge()).toEqual("Err: Negative Number");
   });
 
+  test('should take a person objects age and return mercury years', () => {
+    let newPerson = new Person(20);
+    newPerson.calcAge();
+    expect(newPerson.mercuryAge).toEqual(4.8);
+  });
+
+
 });
