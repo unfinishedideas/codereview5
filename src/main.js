@@ -13,9 +13,12 @@ $(document).ready(function(){
 
     // Collects User's Habits and stores them in the healthInput array
     $("input:checkbox[name=habits]:checked").each(function(){
-        let habitPoint = parseInt($(this).val());
-        healthInput.push(habitPoint);
+      let habitPoint = parseInt($(this).val());
+      healthInput.push(habitPoint);
     });
+    healthInput.push(parseInt($("input:radio[name=sleepHabit]:checked").val()));
+    healthInput.push(parseInt($("input:radio[name=angerHabit]:checked").val()));
+
 
     // Create Person Object
     const newPerson = new Person(ageInput, healthInput);

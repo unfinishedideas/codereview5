@@ -16,31 +16,43 @@
 
     <!-- Bad Habits -->
     <input type="checkbox" name="habits" value="-5"> Smoking<br>
-    <input type="checkbox" name="habits" value="-5"> Smoking<br>
-    <input type="checkbox" name="habits" value="-5"> Smoking<br>
-    <input type="checkbox" name="habits" value="-5"> Smoking<br>
-    <input type="checkbox" name="habits" value="-5"> Smoking<br>
+    <input type="checkbox" name="habits" value="-5"> Drinking<br>
+    <input type="checkbox" name="habits" value="-5"> Eating Poorly<br>
+    <input type="checkbox" name="habits" value="-5"> Frequently Tanning<br>
+    <input type="checkbox" name="habits" value="-5"> Absorbing Stress<br>
 
     <!-- Good Habits -->
-    <input type="checkbox" name="habits" value="5"> Exercise<br>
-    <input type="checkbox" name="habits" value="5"> Exercise<br>
-    <input type="checkbox" name="habits" value="5"> Exercise<br>
+    <input type="checkbox" name="habits" value="5"> Frequent Exercise<br>
+    <input type="checkbox" name="habits" value="5"> Eating Right<br>
+    <input type="checkbox" name="habits" value="5"> Meditation<br>
     <input type="checkbox" name="habits" value="5"> Exercise<br>
     <input type="checkbox" name="habits" value="5"> Exercise<br>
 
+    <!-- Q&A -->
+    <h4>How often do you get 8-10 hours of sleep?</h4>
+
+    <label><input type="radio" name="sleepHabit" value="5">All of the Time</label>
+    <label><input type="radio" name="sleepHabit" value="0" checked>Most of the Time</label>
+    <label><input type="radio" name="sleepHabit" value="-5">Never</label>
+
+    <h4>How often do you get angry?</h4>
+    <label><input type="radio" name="angerHabit" value="-5">All of the Time</label>
+    <label><input type="radio" name="angerHabit" value="0" checked>Most of the Time</label>
+    <label><input type="radio" name="angerHabit" value="5">Never</label>
 
     <button type="submit" name="button">Submit</button>
   </form>
 
   <div class="resultsBox">
     <h2>Results</h2>
-    <h3>Your Age: <span id="ageDump"></span></h3>
-    <h3>Mercury Age: <span id="mercuryAgeDump"></span></h3>
-    <h3>Venus Age: <span id="venusAgeDump"></span></h3>
-    <h3>Mars Age: <span id="marsAgeDump"></span></h3>
-    <h3>Jupiter Age: <span id="jupiterAgeDump"></span></h3>
-    <h3>Life Expectancy on Earth: <span id="lifeExpectDump"></span></h3>
-    <h3>Years Beyond Expectancy: <span id="beyondLifeExpectDump"></span></h3>
+    <h3>Your Age: <span id="ageDump"><!--Age Goes Here--></span></h3>
+    <h3>Mercury Age: <span id="mercuryAgeDump"><!--Mercury Age Goes Here--></span></h3>
+    <h3>Venus Age: <span id="venusAgeDump"><!--Venus Age Goes Here--></span></h3>
+    <h3>Mars Age: <span id="marsAgeDump"><!--Mars Age Goes Here--></span></h3>
+    <h3>Jupiter Age: <span id="jupiterAgeDump"><!--Jupiter Age Goes Here--></span></h3>
+    <h3>Life Expectancy on Earth: <span id="lifeExpectDump"><!--Life Expectancy Goes Here--></span></h3>
+    <h3>Years Beyond Expectancy: <span id="beyondLifeExpectDump"><!--Years Beyond Expectancy Goes Here--></span></h3>
+    <hr>
     <button type="button" name="button" id="resetBtn">Reset?</button>
   </div>
 
