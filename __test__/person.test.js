@@ -33,7 +33,7 @@ describe('Person', () => {
   test('should take a person objects age and return Jupiter years', () => {
     let newPerson = new Person(20);
     newPerson.calcAge();
-    expect(newPerson.marsAge).toEqual(237);
+    expect(newPerson.jupiterAge).toEqual(237);
   });
 
 });
