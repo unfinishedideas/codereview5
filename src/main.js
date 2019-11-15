@@ -18,6 +18,9 @@ $(document).ready(function(){
     });
     healthInput.push(parseInt($("input:radio[name=sleepHabit]:checked").val()));
     healthInput.push(parseInt($("input:radio[name=angerHabit]:checked").val()));
+    healthInput.push(parseInt($("input:radio[name=foodHabit]:checked").val()));
+    healthInput.push(parseInt($("input:radio[name=exerciseHabit]:checked").val()));
+    healthInput.push(parseInt($("input:radio[name=drinkHabit]:checked").val()));
 
 
     // Create Person Object
