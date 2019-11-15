@@ -8,10 +8,7 @@
   <div class="container">
   <div class="jumbotron blueBox">
     <h1>The Super Galactic Age Calculator</h1>
-
   </div>
-
-  <!-- <div class="scaryPlanetDiv"></div> -->
 
   <form class="userInputForm" action="index.html" method="post">
     <div class="row">
@@ -52,7 +49,7 @@
         <div class="questionBox blueBox">
           <h4>How would you rate your eating habits?</h4>
           <label><input type="radio" name="foodHabit" value="5">I am very health concious with my food</label><br>
-          <label><input type="radio" name="foodHabit" value="0">I try not to overdo it but enjoy a cheat meal every now and then</label><br>
+          <label><input type="radio" name="foodHabit" value="0">I enjoy a cheat meal every now and then</label><br>
           <label><input type="radio" name="foodHabit" value="-5">I eat KFC Double Downs™ for breakfast everyday</label><br>
           <br>
         </div>
@@ -75,15 +72,15 @@
 
       </div>
     </div>
-
-
+<div class="submitBox blueBox">
     <label for="userAge">Enter Your Age:</label>
     <input type="text" id="userAge">
     <br>
     <button type="submit" name="button">Submit</button>
+    <h2 id="warnAgeText"><!--Relevant Warning Goes Here--></h2>
+    <h2 id="warnHealthText"><!--Relevant Warning Goes Here--></h2>
+  </div>
   </form>
-  <h2 id="warnAgeText"><!--Relevant Warning Goes Here--></h2>
-  <h2 id="warnHealthText"><!--Relevant Warning Goes Here--></h2>
   <div class="resultsBox blueBox">
     <h2>Results in Years</h2>
     <h3>Your age on Earth: <span id="ageDump" class="dynamicAge"><!--Age Goes Here--></span></h3>
