@@ -11,6 +11,7 @@ export class Person {
     }
     else {
       this.mercuryAge = (this.age * .24);
+      this.venusAge = (this.age * .62);
     }
   }
 }
