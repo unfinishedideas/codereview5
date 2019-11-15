@@ -7,3 +7,7 @@ body {
 #beyondLifeExpectDump {
   display: none;
 }
+
+#warnText {
+  display: none;
+}
