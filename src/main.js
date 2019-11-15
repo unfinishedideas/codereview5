@@ -22,7 +22,6 @@ $(document).ready(function(){
     healthInput.push(parseInt($("input:radio[name=exerciseHabit]:checked").val()));
     healthInput.push(parseInt($("input:radio[name=drinkHabit]:checked").val()));
 
-
     // Create Person Object
     const newPerson = new Person(ageInput, healthInput);
 
@@ -36,26 +35,28 @@ $(document).ready(function(){
     else if (newPerson.calcAge() === "good"){
       $("#warnAgeText").hide();
       newPerson.calcAge();
-    }
+      if (newPerson.calcHealth() === "Err: NaN"){
+        $("#warnHealthText").text("You've entered invalid information in your Health Stats");
+      }
+      else if (newPerson.calcHealth() === ""){
+        $("#warnHealthText").text("You forgot a checkbox");
+      }
+        else {
+        $("#warnHealthText").hide();
+        newPerson.calcHealth();
 
-    if (newPerson.calcHealth() === "Err: NaN"){
-      $("#warnHealthText").text("You've entered invalid information in your Health Stats");
-    }
-    else {
-      $("#warnHealthText").hide();
-      newPerson.calcHealth();
-    }
+        // Display Results
+        $("#ageDump").text(newPerson.age);
+        $("#mercuryAgeDump").text(newPerson.mercuryAge);
+        $("#venusAgeDump").text(newPerson.venusAge);
+        $("#marsAgeDump").text(newPerson.marsAge);
+        $("#jupiterAgeDump").text(newPerson.jupiterAge);
+        $("#lifeExpectDump").text(newPerson.expectedAge);
 
-    // Display Results
-    $("#ageDump").text(newPerson.age);
-    $("#mercuryAgeDump").text(newPerson.mercuryAge);
-    $("#venusAgeDump").text(newPerson.venusAge);
-    $("#marsAgeDump").text(newPerson.marsAge);
-    $("#jupiterAgeDump").text(newPerson.jupiterAge);
-    $("#lifeExpectDump").text(newPerson.expectedAge);
-
-    $(".userInputForm").hide();
-    $(".resultsBox").show();
+        $(".userInputForm").hide();
+        $(".resultsBox").show();
+      }
+    }
   });
 
   // Reset the Page
