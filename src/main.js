@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { Person } from './person.js';
 
+
 $(document).ready(function(){
+
   $(".userInputForm").submit(function(event){
     event.preventDefault();
     // Collects User's Age Input, initialize HealthInput array
