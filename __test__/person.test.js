@@ -7,7 +7,7 @@ describe('Person', () => {
     let newPerson = new Person(NaN, [50]);
     expect(newPerson.calcAge()).toEqual("Err: NaN");
   });
-  test('should check if persons age is a positive integer', () => {
+  test('should check a persons age and 0 or catch negative numbers', () => {
     let newPerson = new Person(-2000, [50]);
     expect(newPerson.calcAge()).toEqual("Err: Negative Number");
   });
@@ -37,5 +37,8 @@ describe('Person', () => {
     let newPerson = new Person(20, [NaN]);
     expect(newPerson.calcHealth()).toEqual("Err: NaN");
   });
-
+  test('should take a person objects health and catch 0 or negative numbers', () => {
+    let newPerson = new Person(20, [-5]);
+    expect(newPerson.calcHealth()).toEqual("Err: Negative Number");
+  });
 });
