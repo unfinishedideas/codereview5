@@ -35,7 +35,7 @@ App will take in a user's age and calculate how old they are on different planet
 
 ### HealthCalc
 
-App will take in a person's lifestyle choices and determine A: a health value from 1-100 and B: a life expectancy for them.
+App will take in a person's lifestyle choices and determine their expected age.
 
 | Behavior      | Input        | Output  |
 | ------------- |:-------------| :-----  |
@@ -66,7 +66,7 @@ _for general styling_
 _for back-end business logic and functionality_
 
 **Bootstrap 4.3.1**
-_for containers / grid layout_
+_for containers / grid layout / button graphics_
 
 **jQuery-3.4.1**
 _for front-end interfacing_
