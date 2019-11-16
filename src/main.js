@@ -19,69 +19,76 @@ $(document).ready(function(){
       healthInput.push(habitPoint);
     });
 
-
-    // Checks all the QA boxes
-    let currentBox = ["sleep", "anger", "food", "exercise", "drink"];
-
-    for (let i = 0; i<currentBox.length; i++){
-      console.log(currentBox[i]);
-      if (!$("input:radio[name="+currentBox[i]+"Habit]:checked").val()){
-        $("#warn"+currentBox[i]+"Text").text("Please Check a Sleep Habit");
-        $("#warn"+currentBox[i]+"Text").show();
-      }
-      else {
-        healthInput.push(parseInt($("input:radio[name="+currentBox[i]+"Habit]:checked").val()));
-        $("#warn"+currentBox[i]+"Text").hide();
-      }
-    }
-
-    // healthInput.push(parseInt($("input:radio[name=angerHabit]:checked").val()));
-    // healthInput.push(parseInt($("input:radio[name=foodHabit]:checked").val()));
-    // healthInput.push(parseInt($("input:radio[name=exerciseHabit]:checked").val()));
-    // healthInput.push(parseInt($("input:radio[name=drinkHabit]:checked").val()));
-
     // Create Person Object
     const newPerson = new Person(ageInput, healthInput);
 
-    // Checks to see if the input was valid
-    if (newPerson.calcAge() === "Err: NaN"){
-      $("#warnAgeText").text("No Strings! Please Enter a Valid Age").show();
-    }
-    else if (newPerson.calcAge() === "Err: Negative Number"){
-      $("#warnAgeText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number").show();
-    }
-    else if (newPerson.calcAge() === "good"){
-      $("#warnAgeText").hide();
+    if (checkAgeInput(newPerson) === true && checkButtons() === true){
+      healthInput.push(parseInt($("input:radio[name=sleepHabit]:checked").val()));
+      healthInput.push(parseInt($("input:radio[name=angerHabit]:checked").val()));
+      healthInput.push(parseInt($("input:radio[name=foodHabit]:checked").val()));
+      healthInput.push(parseInt($("input:radio[name=exerciseHabit]:checked").val()));
+      healthInput.push(parseInt($("input:radio[name=drinkHabit]:checked").val()));
+
+      // Run PersonObj Methods to get age and expectedAge
       newPerson.calcAge();
-      if (newPerson.calcHealth() === "Err: NaN"){
-        $("#warnHealthText").text("You've entered invalid information in your Health Stats");
-      }
-      else if (newPerson.calcHealth() === ""){
-        $("#warnHealthText").text("You forgot a checkbox");
-      }
-      else {
-        $("#warnHealthText").hide();
-        newPerson.calcHealth();
+      newPerson.calcHealth();
 
-        // Display Results
-        $("#ageDump").text(newPerson.age);
-        $("#mercuryAgeDump").text(newPerson.mercuryAge);
-        $("#venusAgeDump").text(newPerson.venusAge);
-        $("#marsAgeDump").text(newPerson.marsAge);
-        $("#jupiterAgeDump").text(newPerson.jupiterAge);
-        $("#lifeExpectDump").text(newPerson.expectedAge);
+      // Display Results
+      $("#ageDump").text(newPerson.age);
+      $("#mercuryAgeDump").text(newPerson.mercuryAge);
+      $("#venusAgeDump").text(newPerson.venusAge);
+      $("#marsAgeDump").text(newPerson.marsAge);
+      $("#jupiterAgeDump").text(newPerson.jupiterAge);
+      $("#lifeExpectDump").text(newPerson.expectedAge);
 
-        $(".userInputForm").hide();
-        $(".resultsBox").slideDown();
+      $(".userInputForm").hide();
+      $(".resultsBox").slideDown();
 
-        if (newPerson.expectedAge < newPerson.age) {
-          let difference = newPerson.age - newPerson.expectedAge;
-          $("#beyondLifeExpectDump").text(difference);
-          $("#beyondTag").show();
-        }
+      if (newPerson.expectedAge < newPerson.age) {
+        let difference = newPerson.age - newPerson.expectedAge;
+        $("#beyondLifeExpectDump").text(difference);
+        $("#beyondTag").show();
       }
     }
   });
+
+  // Check to make sure Age is a good number
+  function checkAgeInput(newPerson){
+    if (newPerson.calcAge() === "Err: NaN"){
+      $("#warnAgeText").text("No Strings! Please Enter a Valid Age").show();
+      return false;
+    }
+    else if (newPerson.calcAge() === "Err: Negative Number"){
+      $("#warnAgeText").text("How are you " + newPerson.age + " Years old? Please Enter a Positive Number").show();
+      return false;
+    }
+    else if (newPerson.calcAge() === "good"){
+      $("#warnAgeText").hide();
+      return true;
+    }
+  }
+
+  // Check the QA radio buttons
+  function checkButtons(){
+    let currentBox = ["sleep", "anger", "food", "exercise", "drink"];
+    let numberFailed = 0;
+    for (let i = 0; i<currentBox.length; i++){
+      if (!$("input:radio[name="+currentBox[i]+"Habit]:checked").val()){
+        $("#warn"+currentBox[i]+"Text").text("Please check a "+currentBox[i]+" habit");
+        $("#warn"+currentBox[i]+"Text").show();
+        numberFailed ++;
+      }
+      else {
+        $("#warn"+currentBox[i]+"Text").hide();
+      }
+    }
+    if (numberFailed > 0){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
 
   // Reset the Page
   $("#resetBtn").click(function(){

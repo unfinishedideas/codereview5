@@ -61,7 +61,7 @@ h1 {
   display: none;
 }
 
-#warnHealthText, #warnAgeText {
+#warnHealthText, #warnAgeText, #warnsleepText, #warnangerText, #warnfoodText, #warnexerciseText, #warndrinkText {
   color: red;
   display: none;
   margin-left: 10px;
