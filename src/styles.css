@@ -14,6 +14,7 @@ button {
 }
 h1 {
     font-size: 3rem;
+    font-weight: bolder;
 }
 .blueBox {
   background-color: rgba(50, 30, 110, 1);
@@ -27,8 +28,9 @@ h1 {
   text-align: center;
   font-variant: small-caps;
   color: #ff9900;
-  text-shadow: 0px 0px 4px red;
-  background-image: linear-gradient(to bottom, rgba(100, 0, 240, .5) 20%, rgba(200, 0, 60, .8) );
+  text-shadow: 0px 0px 14px red;
+  background-color: rgba(50, 30, 110, 1);
+  /* background-image: linear-gradient(to bottom, rgba(100, 0, 240, .5) 20%, rgba(200, 0, 60, .8) ); */
 }
 .questionBox {
   padding: 20px;
@@ -59,13 +61,9 @@ h1 {
   display: none;
 }
 
-#warnAgeText {
-  display: none;
-}
-#warnHealthText {
-  display: none;
-}
-
 #warnHealthText, #warnAgeText {
   color: red;
+  display: none;
+  margin-left: 10px;
+  margin-right: 10px;
 }

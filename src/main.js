@@ -18,11 +18,27 @@ $(document).ready(function(){
       let habitPoint = parseInt($(this).val());
       healthInput.push(habitPoint);
     });
-    healthInput.push(parseInt($("input:radio[name=sleepHabit]:checked").val()));
-    healthInput.push(parseInt($("input:radio[name=angerHabit]:checked").val()));
-    healthInput.push(parseInt($("input:radio[name=foodHabit]:checked").val()));
-    healthInput.push(parseInt($("input:radio[name=exerciseHabit]:checked").val()));
-    healthInput.push(parseInt($("input:radio[name=drinkHabit]:checked").val()));
+
+
+    // Checks all the QA boxes
+    let currentBox = ["sleep", "anger", "food", "exercise", "drink"];
+
+    for (let i = 0; i<currentBox.length; i++){
+      console.log(currentBox[i]);
+      if (!$("input:radio[name="+currentBox[i]+"Habit]:checked").val()){
+        $("#warn"+currentBox[i]+"Text").text("Please Check a Sleep Habit");
+        $("#warn"+currentBox[i]+"Text").show();
+      }
+      else {
+        healthInput.push(parseInt($("input:radio[name="+currentBox[i]+"Habit]:checked").val()));
+        $("#warn"+currentBox[i]+"Text").hide();
+      }
+    }
+
+    // healthInput.push(parseInt($("input:radio[name=angerHabit]:checked").val()));
+    // healthInput.push(parseInt($("input:radio[name=foodHabit]:checked").val()));
+    // healthInput.push(parseInt($("input:radio[name=exerciseHabit]:checked").val()));
+    // healthInput.push(parseInt($("input:radio[name=drinkHabit]:checked").val()));
 
     // Create Person Object
     const newPerson = new Person(ageInput, healthInput);
@@ -56,7 +72,7 @@ $(document).ready(function(){
         $("#lifeExpectDump").text(newPerson.expectedAge);
 
         $(".userInputForm").hide();
-        $(".resultsBox").show();
+        $(".resultsBox").slideDown();
 
         if (newPerson.expectedAge < newPerson.age) {
           let difference = newPerson.age - newPerson.expectedAge;

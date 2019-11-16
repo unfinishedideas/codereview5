@@ -41,10 +41,6 @@ describe('Person', () => {
     const newPerson = new Person(20, [5, NaN, 5]);
     expect(newPerson.calcHealth()).toEqual("Err: NaN");
   });
-  test('should take a person objects healthInput and catch no input', () => {
-    const newPerson = new Person(20, [5, "", 5]);
-    expect(newPerson.calcHealth()).toEqual("Err: NaN");
-  });
   test('should loop through a person objects healthInput array and add each value to the expectedAge property', () => {
     const newPerson = new Person(20, [5, 5, 5]);
     newPerson.calcHealth();
