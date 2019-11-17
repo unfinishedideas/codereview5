@@ -28,10 +28,10 @@ App will take in a user's age and calculate how old they are on different planet
 | ------------- |:-------------| :-----  |
 | App will take in a person's age and return and error if it is not a number | 'Sup' Years | Error: Character other than number submitted |
 | App will take in a person's age and return and error if it is not a positive integer | -5 Years | Error: Number not a positive integer |
-| App will take in a person's age and return their age in Mercury Years (.24 Earth) | 20 Years | 4 Mercury Years |
-| App will take in a person's age and return their age in Venus Years (.62 Earth) | 20 Years | 12 Venus Years |
-| App will take in a person's age and return their age in Mars Years (1.88 Earth) | 20 Years | 37 Mars Years |
-| App will take in a person's age and return their age in Jupiter Years (11.86 Earth) | 20 Years | 237 Jupiter Years |
+| App will take in a person's age and return their age in Mercury Years (.24 Earth) | 20 Years | 83 Mercury Years |
+| App will take in a person's age and return their age in Venus Years (.62 Earth) | 20 Years | 32 Venus Years |
+| App will take in a person's age and return their age in Mars Years (1.88 Earth) | 20 Years | 10 Mars Years |
+| App will take in a person's age and return their age in Jupiter Years (11.86 Earth) | 20 Years | 1 Jupiter Years |
 
 ### HealthCalc
 
@@ -41,10 +41,7 @@ App will take in a person's lifestyle choices and determine their expected age.
 | ------------- |:-------------| :-----  |
 | App will not accept NaN for health value  | healthInput = ["I'm so healthy, bro"]  | Err: Health can't be NaN |
 | App will loop through the healthInput array and add the values to the person's expectedAge property (which starts at 80) | healthInput = [5, 5, 5]  | expectedAge = 95 |
-
-<!-- ### expectCalc -->
-<!-- | If a person has lived past their expectancy; determine how many years past that they have lived | 20 Years Old  /  | 237.2 Jupiter Years | -->
-
+| If a person has lived past their expectancy; determine how many years past that they have lived | 80 Years Old  / (expectancy result = 75) | 5 years beyond expectancy |
 
 
 ## Support and contact
