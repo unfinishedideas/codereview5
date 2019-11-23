@@ -3,7 +3,10 @@ export class Person {
     this.age = age;
     this.healthInput = health;
   }
+  // Makes all the necessary calculations using various Person methods and assigns them to properties of the person object.
   doTheStuff(){
+
+    // Set as constants since they don't change.
     const age = this.age;
     const earthRatio = 1;
     const mercuryRatio = .24;
@@ -33,6 +36,7 @@ export class Person {
       this.jupiterDifference = this.getDifference(this.jupiterAge, this.expectedJupiterAge);
     }
   }
+  // Takes a users age and planet ratio and returns a rounded down division of the two to get the user's age on that planet
   calcPlanetAge(age, planetRatio){
     if (Number.isNaN(age) || Number.isNaN(planetRatio)){
       return "Err: NaN";
@@ -45,6 +49,8 @@ export class Person {
       return planetaryAge;
     }
   }
+
+  // Adds each value in a personObj's healthInput array to an expected age which is then divided by planet ratio and returned.
   calcHealth(planetRatio){
     let expectedAge = 80;
     for (let i = 0; i < this.healthInput.length; i++){
@@ -55,7 +61,8 @@ export class Person {
         expectedAge += this.healthInput[i];
       }
     }
-    return Math.floor(expectedAge / planetRatio);
+    expectedAge /= planetRatio;
+    return Math.floor(expectedAge);
   }
   getDifference(planetaryAge, expectedAge){
     return planetaryAge - expectedAge;

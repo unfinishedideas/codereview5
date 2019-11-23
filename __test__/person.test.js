@@ -2,8 +2,9 @@ import { Person } from './../src/person.js';
 
 describe('Person', () => {
   let newPerson;
-  // MercuryRatio is only a let here for testing purposes
+  // MercuryRatio is only a let here for testing purposes so that it can be changed
   let mercuryRatio;
+  const jupiterRatio = 11.86;
 
   beforeEach(function() {
     newPerson = new Person(90, [5,5,5]);
@@ -37,7 +38,7 @@ describe('Person', () => {
   });
 
   // Get Difference
-  test('getDifference() should simply return the planetaryAge by the Expected Age', () => {
+  test('getDifference() should simply return the planetaryAge subtracted by the Expected Age', () => {
     let planetaryAge = 100;
     let expectedAge = 90;
     expect(newPerson.getDifference(planetaryAge, expectedAge)).toEqual(10);
