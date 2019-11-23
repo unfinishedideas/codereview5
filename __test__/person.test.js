@@ -1,49 +1,45 @@
 import { Person } from './../src/person.js';
 
 describe('Person', () => {
+  let newPerson;
+  // MercuryRatio is only a let here for testing purposes
+  let mercuryRatio;
 
-  // Testing AgeCalc -----------------------------------------------------------
-  test('should check if persons age is a number', () => {
-    const newPerson = new Person(NaN, [5, 5, 5]);
-    expect(newPerson.calcAge()).toEqual("Err: NaN");
-  });
-  test('should check a persons age and 0 or catch negative numbers', () => {
-    const newPerson = new Person(-2000, [5, 5, 5]);
-    expect(newPerson.calcAge()).toEqual("Err: Negative Number");
-  });
-  test('should take a person objects age and return "good" if everything checks out', () => {
-    const newPerson = new Person(20, [5, 5, 5]);
-    expect(newPerson.calcAge()).toEqual("good");
-  });
-  test('should take a person objects age and return mercury years', () => {
-    const newPerson = new Person(20, [5, 5, 5]);
-    newPerson.calcAge();
-    expect(newPerson.mercuryAge).toEqual(83);
-  });
-  test('should take a person objects age and return Venus years', () => {
-    const newPerson = new Person(20, [5, 5, 5]);
-    newPerson.calcAge();
-    expect(newPerson.venusAge).toEqual(32);
-  });
-  test('should take a person objects age and return Mars years', () => {
-    const newPerson = new Person(20, [5, 5, 5]);
-    newPerson.calcAge();
-    expect(newPerson.marsAge).toEqual(10);
-  });
-  test('should take a person objects age and return Jupiter years', () => {
-    const newPerson = new Person(20, [5, 5, 5]);
-    newPerson.calcAge();
-    expect(newPerson.jupiterAge).toEqual(1);
+  beforeEach(function() {
+    newPerson = new Person(90, [5,5,5]);
+    mercuryRatio = .24;
   });
 
-  // Testing Health Calc ------------------------------------------------------
-  test('should take a person objects healthInput and catch NaN', () => {
-    const newPerson = new Person(20, [5, NaN, 5]);
-    expect(newPerson.calcHealth()).toEqual("Err: NaN");
+  // Calc Planet Age
+  test('calcPlanetAge() should take an age and planetRatio and return the correct age rounded down as an int', () => {
+    expect(newPerson.calcPlanetAge(newPerson.age, mercuryRatio)).toEqual(375);
   });
-  test('should loop through a person objects healthInput array and add each value to the expectedAge property', () => {
-    const newPerson = new Person(20, [5, 5, 5]);
-    newPerson.calcHealth();
-    expect(newPerson.expectedAge).toEqual(95);
+  test('calcPlanetAge() should recognize negative numbers if passed into age and return Err: Negative Number', () => {
+    newPerson.age = -55;
+    expect(newPerson.calcPlanetAge(newPerson.age, mercuryRatio)).toEqual("Err: Negative Number");
+  });
+  test('calcPlanetAge() should recognize NaN if passed into age and return Err: NaN', () => {
+    newPerson.age = NaN;
+    expect(newPerson.calcPlanetAge(newPerson.age, mercuryRatio)).toEqual("Err: NaN");
+  });
+  test('calcPlanetAge() should recognize NaN if passed into planetRatio and return Err: NaN', () => {
+    mercuryRatio = NaN;
+    expect(newPerson.calcPlanetAge(newPerson.age, mercuryRatio)).toEqual("Err: NaN");
+  });
+
+  // CalcHealth
+  test('calcHealth() should recognize NaN if found in HealthInput array and return Err: NaN', () => {
+    newPerson.healthInput = [5, NaN, 5]
+    expect(newPerson.calcHealth(mercuryRatio)).toEqual("Err: NaN");
+  });
+  test('calcHealth() should add up all the values in HealthInput, add 80 to them and then return the result divided by the planetRatio value', () => {
+    expect(newPerson.calcHealth(mercuryRatio)).toEqual(395);
+  });
+
+  // Get Difference
+  test('getDifference() should simply return the planetaryAge by the Expected Age', () => {
+    let planetaryAge = 100;
+    let expectedAge = 90;
+    expect(newPerson.getDifference(planetaryAge, expectedAge)).toEqual(10);
   });
 });
